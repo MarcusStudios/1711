@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Usuário</title>
+    <script>
+        function obterInformacoesUsuario() {
+            // Solicita ao usuário que digite a nota1
+            var nota1 = prompt("Digite sua nota1:");
+
+            // Solicita ao usuário que digite a nota2
+            var nota2 = prompt("Digite sua nota2:");
+
+            // Solicita ao usuário que digite a nota3
+            var nota3 = prompt("Digite sua nota3:");
+
+            // Converte as notas para números
+            nota1 = parseFloat(nota1);
+            nota2 = parseFloat(nota2);
+            nota3 = parseFloat(nota3);
+
+            // Verifica se as notas são números válidos
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert("Por favor, digite notas válkidas.");
+                return;
+            }
+
+            // Calcula a soma das notas
+            var soma = nota1 + nota2 + nota3;
+
+            // Calcula a média das notas
+            var media = soma / 3;
+
+            // Abre um popup para exibir os resultados
+            var popup = window.open("", "_blank", "width=400,height=200");
+            popup.document.write("<p>Soma das notas: " + soma + "</p>");
+            popup.document.write("<p>Média das notas: " + media + "</p>");
+        }
+    </script>
+</head>
+<body>
+    <!-- Botão que aciona a função ao ser clicado -->
+    <button onclick="obterInformacoesUsuario()">Obter Informações</button>
+</body>
+</html>
